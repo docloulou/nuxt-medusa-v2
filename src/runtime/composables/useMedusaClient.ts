@@ -1,4 +1,4 @@
-import Medusa from '@medusajs/medusa-js'
+import Medusa from '@medusajs/js-sdk'
 import { useRuntimeConfig, useNuxtApp } from '#imports'
 
 export const useMedusaClient = (): Medusa => {
