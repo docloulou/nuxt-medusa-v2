@@ -7,11 +7,6 @@ const module = defineNuxtModule({
     name: "nuxt-medusa",
     configKey: "medusa"
   },
-  defaults: {
-    baseUrl: "http://localhost:9000",
-    global: true,
-    server: false
-  },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
     nuxt.options.runtimeConfig.private = defu(nuxt.options.runtimeConfig.private, {
