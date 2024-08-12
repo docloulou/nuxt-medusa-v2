@@ -1,7 +1,7 @@
 import { defineNuxtModule, addPlugin, createResolver, addImportsDir, extendViteConfig, addTemplate } from '@nuxt/kit'
 import { fileURLToPath } from 'url'
 import { defu } from 'defu'
-import type { Config } from '@medusajs/medusa-js'
+import type { Config } from '@medusajs/js-sdk'
 
 export type ModuleOptions = Config & { global?: boolean, server: boolean }
 
