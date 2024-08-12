@@ -1,7 +1,7 @@
 import { defineNuxtModule, addPlugin, createResolver, addImportsDir, extendViteConfig, addTemplate } from '@nuxt/kit'
 import { fileURLToPath } from 'url'
 import { defu } from 'defu'
-import type { Config } from '@medusajs/js-sdk'
+import type { Config } from '@medusajs/js-sdk/dist/types'
 
 export type ModuleOptions = Config & { global?: boolean, server: boolean }
 
@@ -12,7 +12,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     baseUrl: 'http://localhost:9000',
-    maxRetries: 3,
     global: true,
     server: false,
   },
@@ -25,8 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.medusa = defu(nuxt.options.runtimeConfig.public.medusa, {
       baseUrl: process.env.MEDUSA_URL || options.baseUrl,
-      maxRetries: options.maxRetries,
-      publishableApiKey: options.publishableApiKey,
+      publishableKey: options.publishableKey,
       global: options.global
     })
 
