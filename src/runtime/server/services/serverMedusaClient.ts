@@ -1,4 +1,4 @@
-import Medusa from '@medusajs/medusa-js'
+import Medusa from '@medusajs/js-sdk'
 import type { H3Event } from 'h3'
 import { useRuntimeConfig } from '#imports'
 
