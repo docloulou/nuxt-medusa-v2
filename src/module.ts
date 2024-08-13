@@ -32,12 +32,12 @@ export default defineNuxtModule<ModuleOptions>({
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
-    nuxt.options.build.transpile.push("@medusajs/medusa-js");
+    nuxt.options.build.transpile.push("@medusajs/js-sdk");
 
     extendViteConfig((config) => {
       config.optimizeDeps = config.optimizeDeps || {}
       config.optimizeDeps.include = config.optimizeDeps.include || []
-      config.optimizeDeps.include.push('@medusajs/medusa-js', 'axios')
+      config.optimizeDeps.include.push('@medusajs/js-sdk', 'axios')
     })
     addImportsDir(resolver.resolve(runtimeDir, 'composables'))
 
